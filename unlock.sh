@@ -7,6 +7,9 @@ sudo npm install --global -y n xpm@latest
 sudo n lts
 sudo xpm install --global @xpack-dev-tools/openocd@latest
 }
+function unlock {
+}
 if [ ! -v openocd ];then
 install_ocd
 fi
+unlock
