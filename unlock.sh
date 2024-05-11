@@ -1,13 +1,25 @@
 #!/bin/bash
+
+info() {
+  echo -e "$(tput smul)$(tput setaf 6)$(tput bold)$1$(tput sgr0)"
+}
+
+error() {
+  echo -e "$(tput setaf 1)$(tput bold)$1$(tput sgr0)"
+  exit 1
+}
+
 function install_ocd {
+info "Installing openocd..."
 # for others releases than bookworm
 curl -fsSL https://deb.nodesource.com/install_20.x | sudo bash -
-sudo apt install nodejs
-sudo npm install --global -y n xpm@latest
+sudo apt install nodejs || error "Failed to install nodesource!"
+sudo npm install --global -y n xpm@latest || error "Failed to install xpm using npm!"
 sudo n lts
-sudo xpm install --global @xpack-dev-tools/openocd@latest
+sudo xpm install --global @xpack-dev-tools/openocd@latest || error "Failed to install openocd using xpm!"
 }
 function unlock {
+info "Unlocking calculator..."
 # create directory
 cd "$HOME"
 mkdir -p Nunlock
@@ -34,4 +46,4 @@ openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
 if [ ! -v openocd ];then
 install_ocd
 fi
-unlock
+unlock || error "Failed to unlock calculator!"
