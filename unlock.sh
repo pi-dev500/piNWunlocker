@@ -16,7 +16,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 sudo apt install nodejs -y || error "Failed to install nodesource!"
 sudo npm install --global -y n xpm@latest || error "Failed to install xpm using npm!"
 sudo n lts
-sudo xpm install --global @xpack-dev-tools/openocd@latest || error "Failed to install openocd using xpm!"
+xpm install --global @xpack-dev-tools/openocd@latest || error "Failed to install openocd using xpm!"
 }
 function unlock {
 info "Unlocking calculator..."
@@ -41,6 +41,7 @@ echo "$cfg">n0110.cfg
 echo "$dfuscr">forcedfu.run
 
 # unlock
+PATH="$PATH:$(echo ~/.local/xPacks/@xpack-dev-tools/openocd/*/.content/bin)"
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
 for i in {0..20};do
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
