@@ -39,12 +39,15 @@ mww 0x40023C18 0x00400080
 mww 0x40023C14 0xC0FFAAFE"
 echo "$cfg">n0110.cfg
 echo "$dfuscr">forcedfu.run
-
+info "Giving you 5 seconds to be ready..."
+sleep 5
+info "Starting..."
 # unlock
 PATH="$PATH:$(echo ~/.local/xPacks/@xpack-dev-tools/openocd/*/.content/bin)"
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
 for i in {0..20};do
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
+sleep 1
 done
 }
 if [ ! -d "~/.local/xPacks/@xpack-dev-tools/openocd/" ];then
