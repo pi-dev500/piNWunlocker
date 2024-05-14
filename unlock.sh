@@ -13,7 +13,7 @@ function install_ocd {
 info "Installing openocd..."
 # for others releases than bookworm
 curl -fsSL https://deb.nodesource.com/install_20.x | sudo bash -
-sudo apt install nodejs || error "Failed to install nodesource!"
+sudo apt install nodejs -y || error "Failed to install nodesource!"
 sudo npm install --global -y n xpm@latest || error "Failed to install xpm using npm!"
 sudo n lts
 sudo xpm install --global @xpack-dev-tools/openocd@latest || error "Failed to install openocd using xpm!"
