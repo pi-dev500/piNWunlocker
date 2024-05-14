@@ -12,7 +12,7 @@ error() {
 function install_ocd {
 info "Installing openocd..."
 # for others releases than bookworm
-curl -fsSL https://deb.nodesource.com/install_20.x | sudo bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 sudo apt install nodejs -y || error "Failed to install nodesource!"
 sudo npm install --global -y n xpm@latest || error "Failed to install xpm using npm!"
 sudo n lts
@@ -42,6 +42,9 @@ echo "$dfuscr">forcedfu.run
 
 # unlock
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
+for i in {0..20};do
+openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
+done
 }
 if [ ! -v openocd ];then
 install_ocd
