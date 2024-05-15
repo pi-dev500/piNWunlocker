@@ -25,7 +25,7 @@ cd "$HOME"
 mkdir -p Nunlock
 cd Nunlock
 # setup confiles
-cfg="source [find interface/raspberrypi-native.cfg]
+cfg="source [find interface/sysfsgpio-raspberrypi.cfg]
 
 transport select swd
 
