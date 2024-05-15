@@ -34,7 +34,9 @@ Finally the 4th allows the transition to RDP0 "without protection" by erasing al
 All the magic of this calculator is back again:)
 "
 </p>
-(Quote from Rapid Zapper's post)
+
+(Quote from Rapid Zapper's [post](https://tiplanet.org/forum/viewtopic.php?f=113&t=25191&mobile_disable=1))
+
 # Sources:
 
  - https://tiplanet.org/forum/viewtopic.php?f=113&t=25191&mobile_disable=1
