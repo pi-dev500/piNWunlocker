@@ -1,6 +1,7 @@
 # piNWunlocker
 Simple shell script allowing to hardware unlock n0110 numworks from a raspberry pi running a debian-based distro
-
+# Warning:
+A bug has been encountered by Sussy OS, please consider that it is currently supported only on raspbian buster and bullseye, I need to do some tests on bookworm before adding it.
 ## Use:
  - First, remove the back of the calculator, then unplug the battery, just by pulling the wire to the right of the calculator, considering that the led is on top and that you look at the back.
  - Then, connect the usb cable from the numworks to the pi ensuring that no page is connected to the numworks on your web browser.
