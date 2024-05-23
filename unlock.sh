@@ -44,6 +44,8 @@ sleep 5
 info "Starting..."
 # unlock
 PATH="$PATH:$(echo ~/.local/xPacks/@xpack-dev-tools/openocd/*/.content/bin)"
+VERSION="$(grep -w VERSION_CODENAME /etc/os-release | cut -d= -f2)"
+test "$VERSION" == "bookworm" && sed 's/sysfsgpio-raspberrypi/raspberrypi-native/g' -i n0110.cfg
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
 for i in {0..20};do
 openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
