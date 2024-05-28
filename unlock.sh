@@ -52,6 +52,8 @@ openocd -f "n0110.cfg" -c "init" -f "forcedfu.run"
 sleep 1
 done
 }
-[[ -d "~/.local/xPacks/@xpack-dev-tools/openocd" ]] || install_ocd
+if [[ ! -d "~/.local/xPacks/@xpack-dev-tools/openocd" ]] ;then
+install_ocd
+fi
 
 unlock || error "Failed to unlock calculator!"
