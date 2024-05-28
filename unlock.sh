@@ -54,7 +54,7 @@ done
 }
 
 #comment
-if [[ ! -d "~/.local/xPacks/@xpack-dev-tools/openocd" ]] ;then
+if [[ ! -d "$HOME/.local/xPacks/@xpack-dev-tools/openocd" ]] ;then
 install_ocd
 fi
 
