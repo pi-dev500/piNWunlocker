@@ -54,7 +54,10 @@ done
 }
 
 #comment
-if [[ ! -d "$HOME/.local/xPacks/@xpack-dev-tools/openocd" ]] ;then
+
+if ls "~/.local/xPacks/@xpack-dev-tools/openocd/" | grep "." ;then
+info "Skipping openocd installation as it seems to be already installed..."
+else
 install_ocd
 fi
 
