@@ -9,7 +9,9 @@ Simple shell script allowing to hardware unlock n0110 numworks from a raspberry 
 ## Use:
  - First, remove the back of the calculator, then unplug the battery, just by pulling the wire to the right of the calculator, considering that the led is on top and that you look at the back.
  - Then, connect the usb cable from the numworks to the pi ensuring that no page is connected to the numworks on your web browser.
- - the wiring will be:
+ - the wiring will be: <img width="1728" height="726" alt="image" src="https://github.com/user-attachments/assets/6f044727-48f7-4d64-82e8-14ca07e2a438" />
+
+   
 In the bash terminal with internet access, you just have to paste that holding the cables on the right place on the numworks: 
 ```
 curl -fsSL https://raw.githubusercontent.com/pi-dev500/piNWunlocker/main/unlock.sh | bash -
